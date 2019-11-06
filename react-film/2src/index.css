@@ -49,7 +49,6 @@ figure {
 }
 
 .film-details {
-  text-align: center;
   flex: 0 1 66.666666%;
   background-color: #f0f0f0;
 }
@@ -250,9 +249,3 @@ figure {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
-
-.material-icons + span {
-  display: block;
-}
-
-

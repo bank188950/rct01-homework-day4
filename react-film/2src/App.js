@@ -26,23 +26,15 @@ class App extends Component {
 
   }
 
-  handleDetailsClick = film => {
-    const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_key}&append_to_response=videos,images&language=en`;
-
-    fetch(url)
-    .then((response) => {
-      return response.json();
-    }).then((data) => {
-      this.setState({current: data});
-    });
+  handleFilmRowToggle = film => {
+    console.log(film);
   }
-
 
   render() {
     return (
       <div className="film-library">
-        <FilmListing films={this.state.films} faves={this.state.faves} onFaveToggle={this.handleFaveToggle} onDetailsClick={this.handleDetailsClick} />
-        <FilmDetails film={this.state.current} />
+        <FilmListing films={this.state.films} faves={this.state.faves} onFaveToggle={this.handleFaveToggle} onFilmRowToggle={this.handleFilmRowToggle} />
+        <FilmDetails films={this.state.films} current={this.state.current}  />
       </div>
     );
   }
